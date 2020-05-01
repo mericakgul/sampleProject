@@ -1,0 +1,23 @@
+{
+  "name": "sampleproject",
+  "version": "1.0.0",
+  "description": "To learn JS, HTML, Css for frontend and eventually java as backend.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mericakgul/sampleProject.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mericakgul/sampleProject/issues"
+  },
+  "homepage": "https://github.com/mericakgul/sampleProject#readme",
+  "devDependencies": {
+    "lite-server": "^2.5.4"
+  }
+}

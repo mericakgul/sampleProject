@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Application Form</title>
+  </head>
+  <body>
+    <h1>Please Fill the Following Fieldssssssss</h1>
+    <script>
+      window.addEventListener("DOMContentLoaded", (event) => {
+        document.getElementById("date_of_birth").value;
+        console.log("DOM fully loaded and parsed");
+      });
+      function checkDateIsPast() {
+        let dateOfToday = new Date();
+        // console.log(dateOfToday.getTime());
+        const dateOfBirth = document.getElementById("date_of_birth").value;
+        let mydate = new Date(dateOfBirth);
+        // console.log(mydate.getTime());
+        validate(dateOfBirth, "meric");
+        if (mydate.getTime() >= dateOfToday.getTime()) {
+          setErrorMessage("The date has to be in the past");
+        }
+      }
+
+      function validate(value, type) {
+        console.log("type", type);
+        setErrorMessage("");
+        switch (type) {
+          case "date":
+            if (value === "") {
+              setErrorMessage("This date value is required");
+            }
+            break;
+          case "text":
+            if (value === "") {
+              setErrorMessage("This input value is required");
+            }
+            break;
+          default:
+            alert(`the type of ${type} is not known`);
+            break;
+        }
+      }
+
+      function setErrorMessage(message) {
+        document.getElementById("error").innerHTML = message;
+      }
+    </script>
+    <form>
+      <label> First Name: </label>
+      <input type="text" value="" maxlength="30" id="first_name" onchange="con/>
+      <label> Second Name: </label>
+      <input type="text" value="" maxlength="30" id="second_name" /><br /><br />
+      <label> Surname: </label>
+      <input type="text" value="" maxlength="30" id="surname" /><br /><br />
+      <label> Date Of Birth: </label>
+      <input
+        onchange="checkDateIsPast()"
+        type="date"
+        value=""
+        id="date_of_birth"
+      /><br /><br />
+      <label> Country Of Birth: </label>
+      <input
+        type="text"
+        value=""
+        maxlength="30"
+        id="countryOfBirth"
+      /><br /><br />
+    </form>
+    <div id="error" style="color: red; font-size: 40px;"></div>
+  </body>
+</html>
